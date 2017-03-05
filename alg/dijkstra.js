@@ -1,11 +1,9 @@
-var _ = require("../lodash"),
-    PriorityQueue = require("../data/priority-queue");
+import _ from 'lodash';
+import PriorityQueue from '../data/priority-queue';
 
-module.exports = dijkstra;
+const DEFAULT_WEIGHT_FUNC = _.constant(1);
 
-var DEFAULT_WEIGHT_FUNC = _.constant(1);
-
-function dijkstra(g, source, weightFn, edgeFn) {
+export default function dijkstra(g, source, weightFn, edgeFn) {
   return runDijkstra(g, String(source),
                      weightFn || DEFAULT_WEIGHT_FUNC,
                      edgeFn || function(v) { return g.outEdges(v); });

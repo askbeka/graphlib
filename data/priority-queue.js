@@ -1,6 +1,6 @@
-var _ = require("../lodash");
+import _ from 'lodash';
 
-module.exports = PriorityQueue;
+export default PriorityQueue;
 
 /**
  * A min-priority queue data structure. This algorithm is derived from Cormen,

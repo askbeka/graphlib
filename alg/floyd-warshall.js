@@ -1,10 +1,8 @@
-var _ = require("../lodash");
+import _ from 'lodash';
 
-module.exports = floydWarshall;
+const DEFAULT_WEIGHT_FUNC = _.constant(1);
 
-var DEFAULT_WEIGHT_FUNC = _.constant(1);
-
-function floydWarshall(g, weightFn, edgeFn) {
+export default function floydWarshall(g, weightFn, edgeFn) {
   return runFloydWarshall(g,
                           weightFn || DEFAULT_WEIGHT_FUNC,
                           edgeFn || function(v) { return g.outEdges(v); });

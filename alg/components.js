@@ -1,8 +1,6 @@
-var _ = require("../lodash");
+import _ from 'lodash';
 
-module.exports = components;
-
-function components(g) {
+export default function components(g) {
   var visited = {},
       cmpts = [],
       cmpt;

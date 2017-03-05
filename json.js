@@ -1,12 +1,7 @@
-var _ = require("./lodash"),
-    Graph = require("./graph");
+import _ from 'lodash';
+import Graph from './graph';
 
-module.exports = {
-  write: write,
-  read: read
-};
-
-function write(g) {
+export function write(g) {
   var json = {
     options: {
       directed: g.isDirected(),
@@ -51,15 +46,15 @@ function writeEdges(g) {
   });
 }
 
-function read(json) {
+export function read(json) {
   var g = new Graph(json.options).setGraph(json.value);
-  _.each(json.nodes, function(entry) {
+  _.forEach(json.nodes, function(entry) {
     g.setNode(entry.v, entry.value);
     if (entry.parent) {
       g.setParent(entry.v, entry.parent);
     }
   });
-  _.each(json.edges, function(entry) {
+  _.forEach(json.edges, function(entry) {
     g.setEdge({ v: entry.v, w: entry.w, name: entry.name }, entry.value);
   });
   return g;

@@ -1,8 +1,6 @@
-var _ = require("../lodash");
+import _ from 'lodash';
 
-module.exports = tarjan;
-
-function tarjan(g) {
+export default function tarjan(g) {
   var index = 0,
       stack = [],
       visited = {}, // node id -> { onStack, lowlink, index }

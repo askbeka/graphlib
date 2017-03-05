@@ -1,8 +1,6 @@
-var topsort = require("./topsort");
+import topsort from './topsort';
 
-module.exports = isAcyclic;
-
-function isAcyclic(g) {
+export default function isAcyclic(g) {
   try {
     topsort(g);
   } catch (e) {
