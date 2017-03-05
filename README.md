@@ -2,9 +2,9 @@
 
 # Graphlib
 Fork from [cpettitt/graphlib] (https://github.com/cpettitt/graphlib), with some modifications: 
-    - ES6
-    - decreased bundle size as a result of webpack tree shaking on lodash
-    - immutable option to support performant update checks in libraries like React 
+- ES6
+- decreased bundle size as a result of webpack tree shaking on lodash
+- immutable option to support performant update checks in libraries like React 
 
 Graphlib is a JavaScript library that provides data structures for undirected
 and directed multi-graphs along with algorithms that can be used with them.
